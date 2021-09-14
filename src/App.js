@@ -9,7 +9,7 @@ export default function App() {
       Sender: 'student',
       Content:
         'https://media.kunduz.com/media/question/raw/20210824091747018738-624037.jpg',
-      Name: 'Gökdeniz ERDEN',
+      Name: 'Gökdeniz ERDEN ',
       ID: '578724',
       Q_ID: '53663427'
     },
@@ -291,10 +291,10 @@ export default function App() {
     render() {
       if (this.props.contentTextType == 'media') {
         var content = (
-          <div>
+          <div class="flex justify-center">
             <button onClick={this.showModal}>
               <img
-                class="max-w-full max-h-64 mx-auto"
+                class="max-w-full max-h-64"
                 src={this.props.contentText + '?type=wm'}
               />
             </button>
