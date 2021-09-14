@@ -165,113 +165,105 @@ export default function App() {
 
   class Modal extends React.Component {
     constructor(props) {
-      super(props);
-      this.state = {
-        degree: 0
-      };
-      this.rotate90clockwise = this.rotate90clockwise.bind(this);
-      this.rotate90anticlockwise = this.rotate90anticlockwise.bind(this);
-    }
-
-    rotate90clockwise() {
-      this.setState({
-        degree: this.state.degree > 180 ? 0 : this.state.degree + 90
-      });
-    }
-    rotate90anticlockwise() {
-      this.setState({
-        degree: this.state.degree < -180 ? 0 : this.state.degree - 90
-      });
-    }
-
-    render() {
-      return (
-        <div
-          class="fixed z-10 inset-0 overflow-y-auto"
-          aria-labelledby="modal-title"
-          role="dialog"
-          aria-modal="true"
-        >
-          <div class="flex items-center justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:p-0">
-            <div
-              class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity"
-              aria-hidden="true"
-            />
-            <div class="inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full">
-              <div class="flex flex-col bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
-                
-                <div class="flex flex-row justify-between">
-                <div class="flex flex-row gap-x-4 ">
-                    <button class="p-2 shadow-lg rounded-lg hover:bg-gray-200 hover:transition-colors" onClick={this.rotate90anticlockwise}>
-                      <svg
-                        class="text-gray-600  text-lg"
-                        stroke="currentColor"
-                        fill="currentColor"
-                        stroke-width="0"
-                        viewBox="0 0 24 24"
-                        height="1em"
-                        width="1em"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path d="M11.52,3.43A9.09,9.09,0,0,0,5.7,5.55V2.35H4.07v6.5h6.5V7.21H6.3a7.46,7.46,0,1,1-1.47,8.65l-1.46.73A9.11,9.11,0,1,0,11.52,3.43Z" />
-                      </svg>
-                    </button>
-                    <button class="bg-gray-400 p-1 px-2 rounded-lg font-semibold text-gray-100 hover:text-gray-400 hover:bg-gray-100 transition-colors shadow-lg"><a href={'https://kunduz.retool.com/apps/DEV%20-%20Tech/Image%20Viewer#url=' + this.props.image + '?type=wm'} target="_blank">Show Image</a></button>
-                    <button class="p-2 shadow-lg rounded-lg hover:bg-gray-200 hover:transition-colors" onClick={this.rotate90clockwise}>
-                      <svg
-                        class="text-gray-600 text-lg"
-                        stroke="currentColor"
-                        fill="currentColor"
-                        stroke-width="0"
-                        viewBox="0 0 24 24"
-                        height="1em"
-                        width="1em"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path d="M12.48,3.43A9.09,9.09,0,0,1,18.3,5.55V2.35h1.64v6.5h-6.5V7.21H17.7a7.46,7.46,0,1,0,1.47,8.65l1.46.73A9.11,9.11,0,1,1,12.48,3.43Z" />
-                      </svg>
-                    </button>
-                  </div>
-                  <button onClick={this.props.closeModal}>
-                    <svg
-                      class="text-gray-600  text-lg"
-                      stroke="currentColor"
-                      fill="currentColor"
-                      stroke-width="0"
-                      viewBox="0 0 1024 1024"
-                      height="1em"
-                      width="1em"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path d="M563.8 512l262.5-312.9c4.4-5.2.7-13.1-6.1-13.1h-79.8c-4.7 0-9.2 2.1-12.3 5.7L511.6 449.8 295.1 191.7c-3-3.6-7.5-5.7-12.3-5.7H203c-6.8 0-10.5 7.9-6.1 13.1L459.4 512 196.9 824.9A7.95 7.95 0 0 0 203 838h79.8c4.7 0 9.2-2.1 12.3-5.7l216.5-258.1 216.5 258.1c3 3.6 7.5 5.7 12.3 5.7h79.8c6.8 0 10.5-7.9 6.1-13.1L563.8 512z" />
-                    </svg>
-                  </button>
-                </div>
-                <div class="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left">
-                  <div class="mt-2">
-                    <span class="text-sm text-gray-500">
-                      <div
-                        style={{ transform: `rotate(${this.state.degree}deg)` }}
-                      >
-                        <Zoom
-                          img={this.props.image + '?type=wm'}
-                          zoomScale={2}
-                          height={400}
-                          width={400}
-                          transitionTime={0.5}
-                          rotateDegree={this.state.degree}
-                        />
-                      </div>
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      );
-    }
-  }
+       super(props);
+       this.state = {
+         degree: 0
+       };
+       this.rotate90clockwise = 					this.rotate90clockwise.bind(this);
+       this.rotate90anticlockwise = this.rotate90anticlockwise.bind(this);
+ 
+     }
+ 
+     rotate90clockwise(){
+       this.setState({degree: this.state.degree > 180 ? 0 : this.state.degree + 90});
+     }
+     rotate90anticlockwise(){
+       this.setState({degree: this.state.degree < -180 ? 0 : this.state.degree - 90});
+     }
+   render(){
+   return (
+     <div
+       class="fixed z-10 inset-0 overflow-y-auto"
+       aria-labelledby="modal-title"
+       role="dialog"
+       aria-modal="true"
+     >
+       <div class="flex items-center justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:p-0">
+         <div
+           class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity"
+           aria-hidden="true" onClick={this.props.closeModal}
+         />
+         <div class="inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full">
+           <div class="flex flex-col bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
+              <div class="flex flex-row justify-between">
+                 <div class="flex flex-row gap-x-4 ">
+                     <button class="p-2 shadow-lg rounded-lg hover:bg-gray-200 hover:transition-colors" onClick={this.rotate90anticlockwise}>
+                       <svg
+                         class="text-gray-600  text-lg"
+                         stroke="currentColor"
+                         fill="currentColor"
+                         stroke-width="0"
+                         viewBox="0 0 24 24"
+                         height="1em"
+                         width="1em"
+                         xmlns="http://www.w3.org/2000/svg"
+                       >
+                         <path d="M11.52,3.43A9.09,9.09,0,0,0,5.7,5.55V2.35H4.07v6.5h6.5V7.21H6.3a7.46,7.46,0,1,1-1.47,8.65l-1.46.73A9.11,9.11,0,1,0,11.52,3.43Z" />
+                       </svg>
+                     </button>
+                     <button class="bg-gray-400 p-1 px-2 rounded-lg font-semibold text-gray-100 hover:text-gray-400 hover:bg-gray-100 transition-colors shadow-lg"><a href={'https://kunduz.retool.com/apps/DEV%20-%20Tech/Image%20Viewer#url=' + this.props.image + '?type=wm'} target="_blank">Show Image</a></button>
+                     <button class="p-2 shadow-lg rounded-lg hover:bg-gray-200 hover:transition-colors" onClick={this.rotate90clockwise}>
+                       <svg
+                         class="text-gray-600 text-lg"
+                         stroke="currentColor"
+                         fill="currentColor"
+                         stroke-width="0"
+                         viewBox="0 0 24 24"
+                         height="1em"
+                         width="1em"
+                         xmlns="http://www.w3.org/2000/svg"
+                       >
+                         <path d="M12.48,3.43A9.09,9.09,0,0,1,18.3,5.55V2.35h1.64v6.5h-6.5V7.21H17.7a7.46,7.46,0,1,0,1.47,8.65l1.46.73A9.11,9.11,0,1,1,12.48,3.43Z" />
+                       </svg>
+                     </button>
+                   </div>
+                   <button onClick={this.props.closeModal}>
+                     <svg
+                       class="text-gray-600  text-lg"
+                       stroke="currentColor"
+                       fill="currentColor"
+                       stroke-width="0"
+                       viewBox="0 0 1024 1024"
+                       height="1em"
+                       width="1em"
+                       xmlns="http://www.w3.org/2000/svg"
+                     >
+                       <path d="M563.8 512l262.5-312.9c4.4-5.2.7-13.1-6.1-13.1h-79.8c-4.7 0-9.2 2.1-12.3 5.7L511.6 449.8 295.1 191.7c-3-3.6-7.5-5.7-12.3-5.7H203c-6.8 0-10.5 7.9-6.1 13.1L459.4 512 196.9 824.9A7.95 7.95 0 0 0 203 838h79.8c4.7 0 9.2-2.1 12.3-5.7l216.5-258.1 216.5 258.1c3 3.6 7.5 5.7 12.3 5.7h79.8c6.8 0 10.5-7.9 6.1-13.1L563.8 512z" />
+                     </svg>
+                   </button>
+                 </div>
+             <div class="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left">
+               <div class="mt-2">
+                 <span class="text-sm text-gray-500">
+               <div style={{ transform: `rotate(${this.state.degree}deg)`}}>
+                 <Zoom 
+                   img={this.props.image + '?type=wm'}
+                   zoomScale={2}
+                   height={400}
+                   width={400}
+                   transitionTime={0.5}
+                   rotateDegree={this.state.degree} />
+                   </div>
+                 </span>
+               </div>
+             </div>
+           </div>
+         </div>
+       </div>
+     </div>
+   );
+   }
+ }
 
   class Message extends React.Component {
     constructor(props) {
