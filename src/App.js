@@ -199,8 +199,9 @@ export default function App() {
             />
             <div class="inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full">
               <div class="flex flex-col bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
+                
                 <div class="flex flex-row justify-between">
-                  <div class="flex flex-row gap-x-4">
+                <div class="flex flex-row gap-x-4 ">
                     <button onClick={this.rotate90anticlockwise}>
                       <svg
                         class="text-gray-600  text-lg"
@@ -215,6 +216,7 @@ export default function App() {
                         <path d="M11.52,3.43A9.09,9.09,0,0,0,5.7,5.55V2.35H4.07v6.5h6.5V7.21H6.3a7.46,7.46,0,1,1-1.47,8.65l-1.46.73A9.11,9.11,0,1,0,11.52,3.43Z" />
                       </svg>
                     </button>
+                    <button class="bg-gray-400 p-1 px-2 rounded-lg font-semibold text-gray-100 hover:text-gray-400 hover:bg-gray-100 transition-colors"><a href={'https://kunduz.retool.com/editor/DEV%20-%20Tech/Image%20Viewer#url=' + this.props.image + '?type=wm'} target="_blank">Show Image</a></button>
                     <button onClick={this.rotate90clockwise}>
                       <svg
                         class="text-gray-600 text-lg"
