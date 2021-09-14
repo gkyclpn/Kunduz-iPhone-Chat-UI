@@ -202,7 +202,7 @@ export default function App() {
                 
                 <div class="flex flex-row justify-between">
                 <div class="flex flex-row gap-x-4 ">
-                    <button onClick={this.rotate90anticlockwise}>
+                    <button class="p-2 shadow-lg rounded-lg hover:bg-gray-200 hover:transition-colors" onClick={this.rotate90anticlockwise}>
                       <svg
                         class="text-gray-600  text-lg"
                         stroke="currentColor"
@@ -217,7 +217,7 @@ export default function App() {
                       </svg>
                     </button>
                     <button class="bg-gray-400 p-1 px-2 rounded-lg font-semibold text-gray-100 hover:text-gray-400 hover:bg-gray-100 transition-colors shadow-lg"><a href={'https://kunduz.retool.com/editor/DEV%20-%20Tech/Image%20Viewer#url=' + this.props.image + '?type=wm'} target="_blank">Show Image</a></button>
-                    <button onClick={this.rotate90clockwise}>
+                    <button class="p-2 shadow-lg rounded-lg hover:bg-gray-200 hover:transition-colors" onClick={this.rotate90clockwise}>
                       <svg
                         class="text-gray-600 text-lg"
                         stroke="currentColor"
